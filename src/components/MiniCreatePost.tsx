@@ -17,35 +17,38 @@ const MiniCreatePost: FC<MiniCreatePostProps> = ({ session }) => {
   const pathname = usePathname()
 
   return (
-    <li className='overflow-hidden rounded-md bg-white shadow'>
-      <div className='h-full px-6 py-4 flex justify-between gap-6'>
-        <div className='relative'>
-          <UserAvatar
-            user={{
-              name: session?.user.name || null,
-              image: session?.user.image || null,
-            }}
-          />
+    <li className="overflow-hidden rounded-md bg-black shadow">
+  <div className="h-full px-6 py-4 flex justify-between gap-6">
+    <div className="relative">
+      <UserAvatar
+        user={{
+          name: session?.user.name || null,
+          image: session?.user.image || null,
+        }}
+      />
+      <span className="absolute bottom-0 right-0 rounded-full w-3 h-3 bg-red-500 outline outline-2 outline-blue-500" />
+    </div>
+    <Input
+      onClick={() => router.push(pathname + '/submit')}
+      readOnly
+      placeholder="Create post"
+      className="text-blue-300 bg-gray-800 placeholder-blue-500 focus:ring-red-500"
+    />
+    <Button
+      onClick={() => router.push(pathname + '/submit')}
+      variant="ghost"
+    >
+      <ImageIcon className="text-red-500 hover:text-blue-400" />
+    </Button>
+    <Button
+      onClick={() => router.push(pathname + '/submit')}
+      variant="ghost"
+    >
+      <Link2 className="text-red-500 hover:text-blue-400" />
+    </Button>
+  </div>
+</li>
 
-          <span className='absolute bottom-0 right-0 rounded-full w-3 h-3 bg-green-500 outline outline-2 outline-white' />
-        </div>
-        <Input
-          onClick={() => router.push(pathname + '/submit')}
-          readOnly
-          placeholder='Create post'
-        />
-        <Button
-          onClick={() => router.push(pathname + '/submit')}
-          variant='ghost'>
-          <ImageIcon className='text-zinc-600' />
-        </Button>
-        <Button
-          onClick={() => router.push(pathname + '/submit')}
-          variant='ghost'>
-          <Link2 className='text-zinc-600' />
-        </Button>
-      </div>
-    </li>
   )
 }
 

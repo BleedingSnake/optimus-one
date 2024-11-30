@@ -59,47 +59,52 @@ const Page = () => {
   })
 
   return (
-    <div className='container flex items-center h-full max-w-3xl mx-auto'>
-      <div className='relative bg-white w-full h-fit p-4 rounded-lg space-y-6'>
-        <div className='flex justify-between items-center'>
-          <h1 className='text-xl font-semibold'>Create a Community</h1>
-        </div>
+    <div className="container flex items-center h-full max-w-3xl mx-auto">
+  <div className="relative bg-black w-full h-fit p-4 rounded-lg space-y-6">
+    <div className="flex justify-between items-center">
+      <h1 className="text-xl font-semibold text-blue-400">Create a Topic</h1>
+    </div>
 
-        <hr className='bg-red-500 h-px' />
+    <hr className="bg-red-500 h-px" />
 
-        <div>
-          <p className='text-lg font-medium'>Name</p>
-          <p className='text-xs pb-2'>
-            Community names including capitalization cannot be changed.
-          </p>
-          <div className='relative'>
-            <p className='absolute text-sm left-0 w-8 inset-y-0 grid place-items-center text-zinc-400'>
-              r/
-            </p>
-            <Input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className='pl-6'
-            />
-          </div>
-        </div>
-
-        <div className='flex justify-end gap-4'>
-          <Button
-            disabled={isLoading}
-            variant='subtle'
-            onClick={() => router.back()}>
-            Cancel
-          </Button>
-          <Button
-            isLoading={isLoading}
-            disabled={input.length === 0}
-            onClick={() => createCommunity()}>
-            Create Community
-          </Button>
-        </div>
+    <div>
+      <p className="text-lg font-medium text-blue-300">Name</p>
+      <p className="text-xs pb-2 text-gray-400">
+        Topic names, including capitalization, cannot be changed.
+      </p>
+      <div className="relative">
+        <p className="absolute text-sm left-0 w-8 inset-y-0 grid place-items-center text-gray-500">
+          
+        </p>
+        <Input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="pl-6 bg-gray-800 text-white border border-gray-700 focus:border-blue-500"
+        />
       </div>
     </div>
+
+    <div className="flex justify-end gap-4">
+      <Button
+        disabled={isLoading}
+        variant="subtle"
+        onClick={() => router.back()}
+        className="text-gray-800 hover:text-red-500 hover:bg-gray-700"
+      >
+        Cancel
+      </Button>
+      <Button
+        isLoading={isLoading}
+        disabled={input.length === 0}
+        onClick={() => createCommunity()}
+        className="bg-red-500 text-white hover:bg-red-600 disabled:bg-gray-700"
+      >
+        Create Topic
+      </Button>
+    </div>
+  </div>
+</div>
+
   )
 }
 

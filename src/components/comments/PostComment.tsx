@@ -79,9 +79,9 @@ const PostComment: FC<PostCommentProps> = ({
           className='h-6 w-6'
         />
         <div className='ml-2 flex items-center gap-x-2'>
-          <p className='text-sm font-medium text-gray-900'>u/{comment.author.username}</p>
+          <p className='text-sm font-medium text-gray-900'>{comment.author.username}</p>
 
-          <p className='max-h-40 truncate text-xs text-zinc-500'>
+          <p className='max-h-40 truncate text-xs text-zinc-00'>
             {formatTimeToNow(new Date(comment.createdAt))}
           </p>
         </div>
@@ -110,7 +110,7 @@ const PostComment: FC<PostCommentProps> = ({
 
       {isReplying ? (
         <div className='grid w-full gap-1.5'>
-          <Label htmlFor='comment'>Your comment</Label>
+          <Label htmlFor='comment'></Label>
           <div className='mt-2'>
             <Textarea
               onFocus={(e) =>

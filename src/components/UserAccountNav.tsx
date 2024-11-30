@@ -43,11 +43,11 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>
-          <Link href='/r/create'>Create Community</Link>
+          <Link href='/r/create'>Create Topic</Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>
-          <Link href='/settings'>Settings</Link>
+          <Link href='/settings'>Change Username</Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem

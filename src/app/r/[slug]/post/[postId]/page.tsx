@@ -63,7 +63,7 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
 
         <div className='sm:w-0 w-full flex-1 bg-white p-4 rounded-sm'>
           <p className='max-h-40 mt-1 truncate text-xs text-gray-500'>
-            Posted by u/{post?.author.username ?? cachedPost.authorUsername}{' '}
+            Posted by {post?.author.username ?? cachedPost.authorUsername}{' '}
             {formatTimeToNow(new Date(post?.createdAt ?? cachedPost.createdAt))}
           </p>
           <h1 className='text-xl font-semibold py-2 leading-6 text-gray-900'>
@@ -73,7 +73,7 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
           <EditorOutput content={post?.content ?? cachedPost.content} />
           <Suspense
             fallback={
-              <Loader2 className='h-5 w-5 animate-spin text-zinc-500' />
+              <Loader2 className='h-5 w-5 animate-spin text-gray-900' />
             }>
             {/* @ts-expect-error Server Component */}
             <CommentsSection postId={post?.id ?? cachedPost.id} />

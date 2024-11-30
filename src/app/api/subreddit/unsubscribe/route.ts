@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
     if (!subscriptionExists) {
       return new Response(
-        "You've not been subscribed to this subreddit, yet.",
+        "You are not following yet.",
         {
           status: 400,
         }
@@ -49,7 +49,7 @@ export async function POST(req: Request) {
     }
 
     return new Response(
-      'Could not unsubscribe from subreddit at this time. Please try later',
+      'Something is not right. Please try later',
       { status: 500 }
     )
   }

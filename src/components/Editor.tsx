@@ -184,7 +184,7 @@ export const Editor: React.FC<EditorProps> = ({ subredditId }) => {
   const { ref: titleRef, ...rest } = register('title')
 
   return (
-    <div className='w-full p-4 bg-zinc-50 rounded-lg border border-zinc-200'>
+    <div className='w-full p-4 bg-zinc-900 rounded-lg border border-zinc-200'>
       <form
         id='subreddit-post-form'
         className='w-fit'
